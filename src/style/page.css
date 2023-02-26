@@ -1,0 +1,57 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(45deg, red, black, black);
+  color: white;
+}
+
+.page_left img {
+  width: 350px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.page_left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page_left button {
+  width: 200px;
+  height: 30px;
+  margin: 20px;
+  background: linear-gradient(45deg, red, black, red);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.page_left button:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.page_right {
+  flex: 1;
+  text-align: center;
+  /* margin-top: 50px; */
+}
+
+.page_right h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.page_right p {
+  padding: 20px;
+  font-family: 'Prosto One', cursive;
+
+}
