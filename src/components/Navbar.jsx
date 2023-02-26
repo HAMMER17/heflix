@@ -4,7 +4,6 @@ import { getFirestore, doc, getDoc, onSnapshot, collection, query, } from "fireb
 import { api } from '../firebase';
 import netflix from '../images/title2.png'
 import { BsFillCartFill } from 'react-icons/bs'
-import { IoSearch } from 'react-icons/io5'
 import { AiOutlinePoweroff } from 'react-icons/ai'
 
 import '../style/navbar.css'
@@ -76,7 +75,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="home_right">
-        <IoSearch size={25} />
+
         <h3>{names}</h3>
         {err ? <img src={photo} alt="foto" /> : <h4>Your Photo</h4>}
         <div className="home_cart">
