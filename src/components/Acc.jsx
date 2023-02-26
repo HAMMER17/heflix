@@ -12,8 +12,8 @@ const Acc = ({ data }) => {
     <div className='acc_container' key={data.id}>
       <div className="acc_header">
         <h2>{data.header}</h2>
-        {show ? <BsPlusLg size={20} onClick={changeIcon} /> :
-          <HiOutlineX size={30} onClick={changeIcon} />}
+        {show ? <BsPlusLg size={20} onClick={changeIcon} style={{ cursor: 'pointer' }} /> :
+          <HiOutlineX size={30} onClick={changeIcon} style={{ cursor: 'pointer' }} />}
       </div>
 
       <p style={{ display: show ? 'none' : 'flex' }}>{data.body}</p>

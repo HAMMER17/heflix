@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { api } from "../firebase";
 import { Link, useNavigate } from 'react-router-dom'
-import net from '../images/net5.jpg'
+// import net from '../images/net5.jpg'
 import '../style/login.css'
 import { useState } from "react";
 
@@ -30,7 +30,7 @@ const Login = () => {
   }
   return (
     <div className='login'>
-      <img src={net} alt="net" />
+      {/* <img src={net} alt="net" /> */}
       <form className='login_container' onSubmit={getLogin}>
         <h1 >{err}</h1>
         <input type="text" placeholder='Email...' value={email}

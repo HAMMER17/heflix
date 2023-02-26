@@ -35,9 +35,11 @@ const Cart = memo(() => {
 
   return (
     <div className='cart'>
-      {data.map((el, id) => (
-        spinner ? (<div className='spinner'><ClockLoader color="#ff0013" size={70} /></div>) : <Elem elem={el} key={id} />
-      ))}
+      {spinner ? (<div className='spinner'><ClockLoader color="#ff0013" size={70} /></div>) :
+        <span style={{ display: 'flex' }}> {data.map((el, id) => (
+          <Elem elem={el} key={id} />
+        ))}</span>
+      }
     </div>
   )
 })

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, onSnapshot, collection, query, } from "firebase/firestore";
 import { api } from '../firebase';
 import netflix from '../images/title2.png'
 import { BsFillCartFill } from 'react-icons/bs'
@@ -9,14 +9,14 @@ import { AiOutlinePoweroff } from 'react-icons/ai'
 
 import '../style/navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+
 
 const Navbar = () => {
   const auth = getAuth(api);
   const db = getFirestore(api);
   const navigate = useNavigate()
-  const length = useSelector(state => state.data.value)
 
+  const [length, setLength] = useState([])
   const [scrolls, setScrolls] = useState(false)
   const [names, setNames] = useState('')
   const [photo, setPhoto] = useState('')
@@ -28,9 +28,17 @@ const Navbar = () => {
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
+        const q = query(collection(db, "cart " + user.uid));
+        onSnapshot(q, (querySnapshot) => {
+          const cities = [];
+          querySnapshot.forEach((doc) => {
+            cities.push(doc.data());
+          });
+          setLength(cities)
+        });
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
-        // navigate('/home')
+
         if (docSnap.exists()) {
           setNames(docSnap.data().name)
           setPhoto(docSnap.data().photo)

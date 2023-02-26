@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { api } from '../firebase.js'
 import { Link, useNavigate } from 'react-router-dom'
-import net from '../images/net1.jpg'
+// import net from '../images/net1.jpg'
 import '../style/login.css'
 import { useState } from 'react';
 
@@ -50,7 +50,7 @@ const Register = () => {
   }
   return (
     <div className='login'>
-      <img src={net} alt="net" />
+      {/* <img src={net} alt="net" /> */}
       <form className='login_container' onSubmit={getLoginPassword}>
         <h1>Register</h1>
         <input type="text" placeholder='Name...'
