@@ -52,7 +52,7 @@ const Create = () => {
         getDownloadURL(uploadTask2.snapshot.ref).then((downloadURL) => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL2) => {
 
-            addDoc(collection(db, "collections"), {
+            addDoc(collection(db, "cartoon"), {
               title,
               film,
               text: area,

@@ -7,6 +7,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { api } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import Accordion from './Accordion';
+import List2 from '../components/List2';
 
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
     <div className='home_container'>
       <Test />
       <List />
-      <List />
+      <List2 />
       <Show />
       <Accordion />
       {/* <Featured /> */}

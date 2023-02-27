@@ -53,7 +53,7 @@ const Navbar = () => {
       }
     });
     // eslint-disable-next-line
-  }, [names])
+  }, [])
   const outUser = async () => {
     await signOut(auth).then(() => {
       setErr(false)

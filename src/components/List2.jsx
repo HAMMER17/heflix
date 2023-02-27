@@ -7,11 +7,11 @@ import ItemList from './ItemList';
 import '../style/list.css'
 
 
-const List = () => {
+const List2 = () => {
   const [data, setData] = useState([])
   const db = getFirestore(api);
   const getData = async () => {
-    const querySnapshot = await getDocs(collection(db, "collections"));
+    const querySnapshot = await getDocs(collection(db, "cartoon"));
     const array = []
     querySnapshot.forEach((doc) => {
       array.push(doc.data())
@@ -65,4 +65,4 @@ const List = () => {
   )
 }
 
-export default List;
+export default List2;
