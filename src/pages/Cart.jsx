@@ -24,9 +24,11 @@ const Cart = memo(() => {
           });
           setData(array)
           console.log("Current cities in CA: ", array);
-          setTimeout(() => {
-            setSpinner(false)
-          }, 2000)
+          // setTimeout(() => {
+          if (array.length === 0)
+            setSpinner(true)
+          else setSpinner(false)
+          // }, 2000)
         })
       }
     })
@@ -35,7 +37,7 @@ const Cart = memo(() => {
 
   return (
     <div className='cart'>
-      {spinner ? (<div className='spinner'><ClockLoader color="#ff0013" size={70} /></div>) :
+      {spinner ? (<div className='spinner'><ClockLoader color="#ff0013" size={70} /><h3 style={{ color: 'white', margin: 30 }}>Add Film</h3></div>) :
         <span style={{ display: 'flex' }}> {data.map((el, id) => (
           <Elem elem={el} key={id} />
         ))}</span>

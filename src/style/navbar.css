@@ -148,3 +148,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.btn {
+  height: 40px;
+  width: 100px;
+  margin: 15px;
+  background: linear-gradient(15deg, red, black, red);
+  color: white;
+  border: 1px solid red;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  border: 1px solid white;
+}

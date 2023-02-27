@@ -44,23 +44,26 @@ const Navbar = () => {
           console.log("Document data:", docSnap.data());
           setErr(true)
         } else {
-          setErr(<h4>your photo</h4>)
+          setNames('Your Name')
+          setPhoto(0)
+          setErr(false)
           console.log("No such document!");
         }
         // ...
       }
     });
     // eslint-disable-next-line
-  }, [])
+  }, [names])
   const outUser = async () => {
-
     await signOut(auth).then(() => {
-      navigate('/login')
+      setErr(false)
+
       console.log('OK')
     }).catch((error) => {
       console.log(error)
     });
   }
+
   return (
     <div className={scrolls ? 'theme' : 'home'}>
       <div className="home_left">
@@ -68,26 +71,22 @@ const Navbar = () => {
 
         <ul className='home_list'>
           <Link to={'/'}><li>Home</li></Link>
-          <li>Series</li>
-          <li>Movies</li>
-          <li>Popular</li>
-          <li>List</li>
         </ul>
       </div>
-      <div className="home_right">
+      {err ? <div className="home_right">
 
         <h3>{names}</h3>
-        {err ? <img src={photo} alt="foto" /> : <h4>Your Photo</h4>}
+        <img src={photo} alt="foto" />
         <div className="home_cart">
           <BsFillCartFill size={30} style={{ cursor: 'pointer' }} onClick={() => navigate('/cart')} />
           <span>{length.length}</span>
         </div>
         <div className="profile">
-          <button onClick={outUser}><AiOutlinePoweroff size={20} /></button>
-
+          <button onClick={() => outUser()}><AiOutlinePoweroff size={20} /></button>
         </div>
+      </div> : <span><button className='btn' onClick={() => navigate('/register')}>sign up</button>
+        <button className='btn' onClick={() => navigate('/login')}>sign in</button></span>}
 
-      </div>
     </div>
   )
 }
