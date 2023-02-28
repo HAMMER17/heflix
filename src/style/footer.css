@@ -6,15 +6,16 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(45deg, red, black, black, red);
-  color: red;
+
   /* transition: 0.5s; */
 
 }
 
 .footer h1 {
-  text-shadow: 5px 10px 5px white;
+  text-shadow: 5px 10px 5px red;
   font-family: 'Prosto One', cursive;
   letter-spacing: 5px;
+  color: white;
 }
 
 
