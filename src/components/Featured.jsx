@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BsFillPlayCircleFill, BsInfoCircleFill } from 'react-icons/bs'
-import matrix from '../images/matrix.png'
+// import matrix from '../images/matrix.png'
 import '../style/featured.css'
-import netflix from '../images/net5.jpg'
-import agent from '../images/agent.jpg'
+
+// import agent from '../images/agent.jpg'
 import title from '../images/title2.png'
 import { useNavigate } from 'react-router-dom'
 import Input from './Input'
@@ -15,12 +15,11 @@ const Featured = () => {
 
   return (
     <div className='featured_home' >
-      <img src={netflix} alt="netflix" />
       <h1>NETFLIX</h1>
       <Input />
       {/* <Matrix /> */}
       <div className="featured">
-        <img src={matrix} alt="title" />
+        {/* <img src={matrix} alt="title" /> */}
         <div className="buttons">
           <button onClick={() => navigate('/play')}>
             <BsFillPlayCircleFill size={25} />
@@ -35,7 +34,7 @@ const Featured = () => {
         </div>
       </div>
       <div className={info ? 'info' : 'into_none'}>
-        <img src={agent} alt="img" />
+        {/* <img src={agent} alt="img" /> */}
         <p>
           <img src={title} alt="title" />
           "Bond's loyalty to his boss M is under threat from her past,

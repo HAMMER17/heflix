@@ -8,6 +8,7 @@ import { api } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import Accordion from './Accordion';
 import List2 from '../components/List2';
+import Moves from './Moves';
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
       <List2 />
       <Show />
       <Accordion />
+      <Moves />
       {/* <Featured /> */}
     </div>
   )

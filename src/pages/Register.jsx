@@ -61,7 +61,7 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)} value={password} />
         <input type="file" id="file" onChange={(e) => setFile(e.target.files[0])} />
         <button>register</button>
-        <p>You have  login?<span><Link to={'/'}> Login</Link></span> </p>
+        <p>You have  login?<span><Link to={'/login'}> Login</Link></span> </p>
       </form>
 
     </div>
