@@ -40,3 +40,18 @@
   transition: 1s;
 
 }
+
+.video {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  width: 700px;
+  height: 500px;
+  background: black;
+  z-index: 1;
+}
+
+.video .video_url {
+  width: 700px;
+  height: 100%;
+}
